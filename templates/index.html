@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Text Summarizer</h1>
+            <p>Use AI-powered summarization to extract key information from your text.</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="toolbar">
+                    <button id="loadSampleBtn">Load Sample</button>
+                    <button id="pasteBtn">Paste</button>
+                    <button id="clearBtn">Clear</button>
+                    <span id="inputWordCount" class="word-count">Words: 0</span>
+                </div>
+                <textarea id="inputText" placeholder="Enter or paste your text here..."></textarea>
+            </div>
+
+            <div class="controls-section">
+                <div class="control-group">
+                    <label for="summaryLengthSlider">Summary Length: <span id="summaryLengthValue">30%</span></label>
+                    <input type="range" id="summaryLengthSlider" min="10" max="90" value="30" class="slider">
+                </div>
+                <div class="control-group">
+                    <label for="importanceThresholdSlider">Importance Threshold: <span id="importanceThresholdValue">1.2</span></label>
+                    <input type="range" id="importanceThresholdSlider" min="1" max="30" value="12" class="slider">
+                </div>
+                <button id="summarizeBtn" class="primary-button">Summarize</button>
+            </div>
+
+            <div class="output-section">
+                <div class="toolbar">
+                    <span class="section-title">Summary</span>
+                    <button id="copyBtn">Copy</button>
+                    <button id="saveBtn">Save</button>
+                    <span id="summaryWordCount" class="word-count">Words: 0</span>
+                </div>
+                <div id="summaryText" class="summary-output"></div>
+            </div>
+
+            <div class="stats-section">
+                <h3>Statistics</h3>
+                <div id="statsDisplay">
+                    <p>No statistics available yet.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p id="statusText">Ready</p>
+        </footer>
+
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="spinner"></div>
+            <p>Summarizing text...</p>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
